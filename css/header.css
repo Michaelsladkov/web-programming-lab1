@@ -1,0 +1,19 @@
+#header {
+    background-color: orange;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 0;
+    border: 5px;
+    padding: 10px;
+    width: 100%;
+    font-family: cursive;
+    font-size: 24px;
+    color: #770d9e;
+    alignment: center;
+}
+
+#header > p{
+    display: inline;
+    margin-right: 30px;
+}
