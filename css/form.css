@@ -1,0 +1,9 @@
+div.checkbox_block {
+    display: inline-block;
+    text-align: center;
+}
+
+div.field {
+    margin-bottom: 7px;
+    margin-top: 20px;
+}
