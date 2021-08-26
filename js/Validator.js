@@ -11,7 +11,6 @@ function validation() {
     //checking X value
     let xValue = form.elements.X.value;
     let xNumberValue = parseFloat(xValue);
-    console.log(xNumberValue);
     if (xValue === "" || isNaN(xNumberValue)) {
         showMessage("Введите число X");
         return false;

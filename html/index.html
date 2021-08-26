@@ -8,7 +8,7 @@
             background-color: white;
         }
 
-        div#content > div {
+        #content > td {
             border: orangered solid 4px;
             padding: 20px;
             display: inline-block;
@@ -23,12 +23,12 @@
         }
     </style>
     <style id="form style">
-        div.checkbox_block {
+        .checkbox_block {
             display: inline-block;
             text-align: center;
         }
 
-        div.field {
+        .field {
             margin-bottom: 7px;
             margin-top: 20px;
         }
@@ -65,18 +65,19 @@
     <p>Группа: P3231</p>
     <p>Вариант: 31013</p>
 </div>
-<div id="content">
-    <div class="image container">
-        <img src="../images/areas.png" alt="sorry">
-    </div>
-    <div class="form container">
-        <p>Параметры</p>
-        <form method="post" action="../php/Shot.php" name="MainForm">
-            <div id="x_value" class="field">
-                X:
-                <input type="text" name="X">
-            </div>
-            <div id="y_value" class="field">
+<table>
+    <tr id="content">
+        <td class="image container">
+            <img src="../images/areas.png" alt="sorry">
+        </td>
+        <td class="form container">
+            <p>Параметры</p>
+            <form method="post" action="../php/Shot.php" name="MainForm">
+                <div id="x_value" class="field">
+                    X:
+                    <input type="text" name="X">
+                </div>
+                <div id="y_value" class="field">
                 Y:
                 <div class="checkbox_block">
                     -4 <br>
@@ -117,7 +118,7 @@
                     </label>
                 </div>
             </div>
-            <div id="r_value" class="field">
+                <div id="r_value" class="field">
                 R:
                 <div class="checkbox_block">
                     1 <br>
@@ -140,10 +141,15 @@
                     <input type="checkbox" name="R" value="5">
                 </div>
             </div>
-            <input type="submit">
-        </form>
-    </div>
-    <p id="errorDisplay"></p>
-</div>
+                <input type="submit">
+            </form>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p id="errorDisplay"></p>
+        </td>
+    </tr>
+</table>
 </body>
 </html>
