@@ -3,9 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <title>Лаба 1</title>
-    <link rel="stylesheet" href="../css/global.css">
-    <link rel=stylesheet href="../css/header.css">
-    <link rel="stylesheet" href="../css/form.css">
+    <style id="other elements">
+        body {
+            background-color: white;
+        }
+
+        div#content > div {
+            border: orangered solid 4px;
+            padding: 20px;
+            display: inline-block;
+            margin: 30px;
+        }
+
+        #errorDisplay {
+            color: red;
+            font-weight: bolder;
+            font-size: 18px;
+            padding: 40px;
+        }
+    </style>
+    <style id="form style">
+        div.checkbox_block {
+            display: inline-block;
+            text-align: center;
+        }
+
+        div.field {
+            margin-bottom: 7px;
+            margin-top: 20px;
+        }
+    </style>
+    <style id="header style">
+        #header {
+            background-color: orangered;
+            position: relative;
+            left: -10px;
+            top: -10px;
+            width: 100%;
+            margin-bottom: 10px;
+            border: 5px;
+            padding: 10px;
+            font-family: cursive;
+            font-size: 24px;
+            color: #770d9e;
+            alignment: center;
+        }
+
+        #header > p{
+            display: inline;
+            margin-right: 30px;
+        }
+    </style>
     <script src="../js/Injector.js"></script>
     <script src="../js/CheckBoxSwitcher.js"></script>
     <script src="../js/ErrorsDisplay.js"></script>
