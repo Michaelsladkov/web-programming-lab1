@@ -6,6 +6,10 @@
     <link rel="stylesheet" href="../css/global.css">
     <link rel=stylesheet href="../css/header.css">
     <link rel="stylesheet" href="../css/form.css">
+    <script src="../js/Injector.js"></script>
+    <script src="../js/CheckBoxSwitcher.js"></script>
+    <script src="../js/ErrorsDisplay.js"></script>
+    <script src="../js/Validator.js"></script>
 </head>
 <body>
 <div id="header">
@@ -19,7 +23,7 @@
     </div>
     <div class="form container">
         <p>Параметры</p>
-        <form method="post" action="../php/Shot.php">
+        <form method="post" action="../php/Shot.php" name="MainForm">
             <div id="x_value" class="field">
                 X:
                 <input type="text" name="X">
@@ -91,6 +95,7 @@
             <input type="submit">
         </form>
     </div>
+    <p id="errorDisplay"></p>
 </div>
 </body>
 </html>

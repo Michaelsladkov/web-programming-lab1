@@ -1,8 +1,9 @@
 <?php
-$x = intval($_POST['X']);
+$x = floatval($_POST['X']);
 $y = intval($_POST['Y']);
 $r = intval($_POST['R']);
-echo check_shot($x, $y, $r);
+echo $x.' '.$y.' '.$r.'<br>';
+echo check_shot($x, $y, $r) ? 'true' : 'false';
 
 function check_shot($x, $y, $r) {
     if ($x >= 0) {

@@ -1,3 +1,17 @@
 body {
     background-color: white;
 }
+
+div#content > div {
+    border: orangered solid 4px;
+    padding: 20px;
+    display: inline-block;
+    margin: 30px;
+}
+
+#errorDisplay {
+    color: red;
+    font-weight: bolder;
+    font-size: 18px;
+    padding: 40px;
+}
