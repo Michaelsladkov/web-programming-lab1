@@ -36,7 +36,7 @@ function process_shot($x, $y, $r) {
     define("e", "</td>");
     define("s", "</td><td>");
     return b.$x.s.$y.s.$r.s.
-        date("G:i:s d-m-Y").s.
+        date("G:i:s d-m-Y",  time() - $_GET['date'] * 60).s.
         (round(microtime(true) - $_SERVER['REQUEST_TIME_FLOAT'], 6)).
         s.($success ? "попал" : "не попал").e.PHP_EOL;
 }
