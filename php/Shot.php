@@ -69,7 +69,7 @@ function draw_output() {
         array_push($records, fgets($storage));
     }
     echo $begin;
-    $length = count($records);;
+    $length = count($records);
     for ($i = 0; $i < $length; $i++) {
         echo "<tr>";
         echo $records[$length - $i - 1];
