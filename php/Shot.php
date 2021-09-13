@@ -41,7 +41,7 @@ function check_shot($x, $y, $r) {
             return $x * $x + $y * $y <= $r * $r;
         }
         else {
-            return $r + $y <= $x;
+            return $x <= $r && $y >= -$r && $x - $r <= $y;
         }
     }
     else {
