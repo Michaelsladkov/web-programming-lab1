@@ -40,4 +40,5 @@ function validation() {
         showMessage("Установите параметр R");
         return false;
     }
+    return true;
 }
