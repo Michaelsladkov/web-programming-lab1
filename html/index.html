@@ -66,6 +66,19 @@
             margin-right: 30px;
         }
     </style>
+    <style>
+        #results table, th, td {
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 50px;
+            border: orangered 2px solid;
+            border-collapse: collapse;
+            padding: 5px 10px;
+        }
+        #results td {
+            text-align: center;
+        }
+    </style>
     <script src="../js/Injector.js"></script>
     <script src="../js/CheckBoxSwitcher.js"></script>
     <script src="../js/ErrorsDisplay.js"></script>
@@ -189,8 +202,22 @@
         </td>
     </tr>
     <tr>
-        <td>
+        <td colspan="2">
             <p id="errorDisplay"></p>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <table id="results">
+                <tr>
+                    <th>X</th>
+                    <th>Y</th>
+                    <th>R</th>
+                    <th>Время обращения</th>
+                    <th>Время исполнения</th>
+                    <th>Результат</th>
+                </tr>
+            </table>
         </td>
     </tr>
 </table>
