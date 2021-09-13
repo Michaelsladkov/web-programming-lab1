@@ -6,16 +6,13 @@ $x = $_POST['X'];
 $y = $_POST['Y'];
 $r = $_POST['R'];
 validate($x, $y, $r);
-$out = fopen("../storage", "a");
-fwrite($out, process_shot($x, $y, $r));
-fclose($out);
-echo process_shot();
+echo process_shot($x, $y, $r);
 
 function validate($x, $y, $r) {
-    if (is_nan($x)) {
+    $x_num = floatval($x);
+    if (is_nan($x_num)) {
         exit("X не число");
     }
-    $x_num = floatval($x);
     if ($x_num > 3 || $x_num < (-5)) {
         exit("Число Х должно принадлежать отрезку (-5 ... 3)");
     }
@@ -32,10 +29,10 @@ function process_shot($x, $y, $r) {
     $y_num = intval($y);
     $r_num = intval($r);
     $success = check_shot($x_num, $y_num, $r_num);
-    $time = date("G:i:s d-m-Y",  time() - $_GET['date'] * 60);
+    $time = date("G:i:s d-m-Y",  time());
     $executionTime = round(microtime(true) - $_SERVER['REQUEST_TIME_FLOAT'], 6);
-    return '{"X":"' . $x . '","Y":"' . $y . '","R":"' . $r . '","now":"' . $time
-        . '","execution":"' . $executionTime . '","result":' . ($success ? "попал" : "не попал"). '}';
+    return '{"X": "' . $x . '","Y": "' . $y . '","R": "' . $r . '","now": "' . $time
+        . '","execution": "' . $executionTime . '","result": ' . ($success ? '"попал"' : '"не попал"'). '}';
 }
 
 function check_shot($x, $y, $r) {

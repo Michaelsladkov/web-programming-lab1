@@ -3,22 +3,20 @@ function makeRequest() {
     $.ajax({
         url: "../php/Shot.php",
         type: "POST",
-        data: `x=${getXNumberValue()}&y=${getYNumberValue()}&r=${getRNumberValue()}`,
+        data: `X=${getXNumberValue()}&Y=${getYNumberValue()}&R=${getRNumberValue()}`,
         success: function (response) {
-            alert("gotcha");
-            console.log("success");
             let data = JSON.parse(response);
             appendLine(data);
         }
     })
-    alert("sent");
+    return false;
 }
 function getXNumberValue() {
-    return parseFloat($('#x_value > input').value);
+    return parseFloat(form.elements.X.value);
 }
 function getYNumberValue() {
-    return $('#y_value :checked').value;
+    return $('#y_value :checked').val();
 }
 function getRNumberValue() {
-    return $('#r_value :checked').value;
+    return $('#r_value :checked').val();
 }
