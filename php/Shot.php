@@ -9,7 +9,7 @@ validate($x, $y, $r);
 $out = fopen("../storage", "a");
 fwrite($out, process_shot($x, $y, $r));
 fclose($out);
-draw_output();
+echo process_shot();
 
 function validate($x, $y, $r) {
     if (is_nan($x)) {
@@ -32,13 +32,10 @@ function process_shot($x, $y, $r) {
     $y_num = intval($y);
     $r_num = intval($r);
     $success = check_shot($x_num, $y_num, $r_num);
-    define("b", "<td>");
-    define("e", "</td>");
-    define("s", "</td><td>");
-    return b.$x.s.$y.s.$r.s.
-        date("G:i:s d-m-Y",  time() - $_GET['date'] * 60).s.
-        (round(microtime(true) - $_SERVER['REQUEST_TIME_FLOAT'], 6)).
-        s.($success ? "попал" : "не попал").e.PHP_EOL;
+    $time = date("G:i:s d-m-Y",  time() - $_GET['date'] * 60);
+    $executionTime = round(microtime(true) - $_SERVER['REQUEST_TIME_FLOAT'], 6);
+    return '{"X":"' . $x . '","Y":"' . $y . '","R":"' . $r . '","now":"' . $time
+        . '","execution":"' . $executionTime . '","result":' . ($success ? "попал" : "не попал"). '}';
 }
 
 function check_shot($x, $y, $r) {
@@ -58,22 +55,4 @@ function check_shot($x, $y, $r) {
             return $x >= (-$r) && $y >= (-$r) / 2;
         }
     }
-}
-
-function draw_output() {
-    $begin = file_get_contents("../html/output_template_begin.html");
-    $end = file_get_contents("../html/output_template_end.html");
-    $storage = fopen("../storage", "r");
-    $records = [];
-    while (!feof($storage)) {
-        array_push($records, fgets($storage));
-    }
-    echo $begin;
-    $length = count($records);
-    for ($i = 0; $i < $length; $i++) {
-        echo "<tr>";
-        echo $records[$length - $i - 1];
-        echo "</tr>";
-    }
-    echo $end;
 }

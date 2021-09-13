@@ -1,10 +1,9 @@
 let form;
-
-function setFormAndBoxes(newForm, yBoxesArray, rBoxesArray) {
+function setFormAndBoxesForValidator(newForm, yBoxesArray, rBoxesArray) {
     form = newForm;
     yBoxes = yBoxesArray;
     rBoxes = rBoxesArray;
-    form.onsubmit = validation;
+    form.onsubmit = makeRequest;
 }
 
 function validation() {

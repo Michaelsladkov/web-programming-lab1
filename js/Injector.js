@@ -12,6 +12,6 @@ window.onload = function () {
     }
     let errorDisplay = document.getElementById("errorDisplay");
     setDisplay(errorDisplay);
-    setFormAndBoxes(form, yBoxes, rBoxes);
+    setFormAndBoxesForValidator(form, yBoxes, rBoxes);
     form.elements.X.onclick = clearErrors;
 }

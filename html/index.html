@@ -27,7 +27,7 @@
             color: red;
             font-weight: bolder;
             font-size: 18px;
-            padding: 40px;
+            padding: 20px;
         }
     </style>
     <style id="form style">
@@ -67,10 +67,10 @@
         }
     </style>
     <style>
-        #results table, th, td {
+        #results, #results th, #results td {
             margin-left: auto;
             margin-right: auto;
-            margin-top: 50px;
+            margin-top: 10px;
             border: orangered 2px solid;
             border-collapse: collapse;
             padding: 5px 10px;
@@ -78,11 +78,17 @@
         #results td {
             text-align: center;
         }
+        #results {
+            margin-bottom: 80px;
+        }
     </style>
     <script src="../js/Injector.js"></script>
     <script src="../js/CheckBoxSwitcher.js"></script>
     <script src="../js/ErrorsDisplay.js"></script>
     <script src="../js/Validator.js"></script>
+    <script src="../js/LineAppender.js"></script>
+    <script src="../js/RequestProcessor.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
 </head>
 <body>
 <div class="header">
@@ -100,7 +106,7 @@
         </td>
         <td class="form container">
             <p>Параметры</p>
-            <form method="post" action="../php/Shot.php" name="MainForm">
+            <form name="MainForm" method="post" action="">
                 <div id="x_value" class="field">
                     X:
                     <label>
