@@ -3,12 +3,15 @@ function makeRequest() {
     $.ajax({
         url: "../php/Shot.php",
         type: "POST",
-        data: `X=${getXNumberValue()}&X=${getYNumberValue()}&R=${getRNumberValue()}`,
+        data: `x=${getXNumberValue()}&y=${getYNumberValue()}&r=${getRNumberValue()}`,
         success: function (response) {
+            alert("gotcha");
+            console.log("success");
             let data = JSON.parse(response);
             appendLine(data);
         }
     })
+    alert("sent");
 }
 function getXNumberValue() {
     return parseFloat($('#x_value > input').value);
