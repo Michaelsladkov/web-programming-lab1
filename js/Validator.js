@@ -15,7 +15,8 @@ function checkX() {
     clearErrors();
     let xValue = form.elements.X.value;
     let xNumberValue = parseFloat(xValue);
-    if (xValue === "" || isNaN(xNumberValue) || (!xValue.match(/^-?[0-9]*[\.,]?[0-9]*$/))) {
+    if (xValue === "" ||
+        ((!xValue.match(/^-?[0-9]*$/)) && (!xValue.match(/^-?[0-9]*[\.,][0-9]+$/)))) {
         showMessage("Введите число X");
         return false;
     }
