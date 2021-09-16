@@ -4,13 +4,18 @@ function setFormAndBoxesForValidator(newForm, yBoxesArray, rBoxesArray) {
     yBoxes = yBoxesArray;
     rBoxes = rBoxesArray;
     form.onsubmit = makeRequest;
+    form.elements.X.oninput = checkX;
 }
 
 function validation() {
-    //checking X value
+    return checkX() && checkY() && checkR();
+}
+
+function checkX() {
+    clearErrors();
     let xValue = form.elements.X.value;
     let xNumberValue = parseFloat(xValue);
-    if (xValue === "" || isNaN(xNumberValue)) {
+    if (xValue === "" || isNaN(xNumberValue) || (!xValue.match(/^-?[0-9]*[\.,]?[0-9]*$/))) {
         showMessage("Введите число X");
         return false;
     }
@@ -18,7 +23,10 @@ function validation() {
         showMessage("Число Х должно принадлежать отрезку (-5 ... 3)");
         return false;
     }
-    //checking y value
+    return true;
+}
+
+function checkY() {
     let ySelected = false;
     for (let yBox of yBoxes) {
         if (yBox.checked) {
@@ -29,7 +37,10 @@ function validation() {
         showMessage("Установите параметр Y");
         return false;
     }
-    //checking r value
+    return true
+}
+
+function checkR() {
     let rSelected = false;
     for (let rBox of rBoxes) {
         if (rBox.checked) {
